@@ -5,141 +5,165 @@ import {
   Cpu,
   Globe2,
   Bot,
-  PhoneCall,
   MessageSquare,
   FileCheck2,
   ChevronRight,
+  ShieldCheck,
+  CheckCircle,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const SERVICES_DATA = [
   {
     icon: Cpu,
-    tag: "Core Infrastructure",
-    title: "Custom Business Software & ERPs",
-    desc: "Replace clunky paper trails and out-of-sync Excel sheets with clean, lightweight software built specifically around your exact operational routines.",
-    benefit: "Staff learns it in 30 minutes. Zero human calculation errors.",
-    deliverables: ["Custom Inventory & Billing", "Field Staff Tracking", "Role-Based Access"],
+    tag: "Core Systems",
+    title: "Custom Software & ERPs",
+    outcome: "Built strictly around your team's existing workflow. 30-min staff learning curve.",
+    visual: (
+      <div className="flex flex-wrap gap-1.5 pt-2 font-mono text-[10px]">
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          ✓ Tally Synced
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          ✓ Real-time Stock
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          ✓ Multi-Branch
+        </span>
+      </div>
+    ),
   },
   {
-    icon: Globe2,
-    tag: "Digital Authority",
-    title: "High-Authority Business Portfolios",
-    desc: "A lightning-fast, cinematic digital presence designed to pass vendor scrutiny when bidding for contracts with national banks and enterprise clients.",
-    benefit: "Builds instant institutional trust and authority.",
-    deliverables: ["Modern Mobile-First Design", "Client Portals & Case Studies", "High Speed Hosting"],
+    icon: MessageSquare,
+    tag: "Client Channels",
+    title: "Smart WhatsApp Bots",
+    outcome: "Automated quotation dispatch, payment receipts, and floor-plan PDFs where customers live.",
+    visual: (
+      <div className="flex flex-wrap gap-1.5 pt-2 font-mono text-[10px]">
+        <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-1 rounded">
+          98% Open Rate
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          Auto PDF Delivery
+        </span>
+      </div>
+    ),
   },
   {
     icon: Bot,
     tag: "24/7 Intelligence",
-    title: "AI Web Sales & Support Agents",
-    desc: "Intelligent conversational agents embedded directly on your site, trained on your exact service catalog, pricing models, and regional business nuance.",
-    benefit: "Captures qualified leads while you sleep.",
-    deliverables: ["Multilingual Understanding", "Automated Lead Qualification", "Direct CRM Sync"],
-  },
-  {
-    icon: PhoneCall,
-    tag: "Voice Tech",
-    title: "AI Voice Agents (Inbound & Outbound)",
-    desc: "Natural-sounding voice agents that answer routine customer calls, follow up on quotes, verify appointments, and route high-priority cases to you.",
-    benefit: "Handle 50+ simultaneous calls without a call center.",
-    deliverables: ["Instant Call Answering", "Appointment Scheduling", "Post-Call Summaries"],
-  },
-  {
-    icon: MessageSquare,
-    tag: "Client Communication",
-    title: "Smart WhatsApp Bots & Workflows",
-    desc: "Engage clients where they already live. Automated quotation delivery, payment receipts, order status updates, and interactive self-service menus.",
-    benefit: "98% message open rate within 5 minutes.",
-    deliverables: ["Official WhatsApp API", "Automated PDF Delivery", "Interactive Menus"],
+    title: "AI Web & Voice Agents",
+    outcome: "Voice & chat attendants understanding regional nuance to qualify buyers and book meetings.",
+    visual: (
+      <div className="flex items-center gap-2 pt-2 font-mono text-[10px]">
+        <span className="inline-flex items-center gap-1 bg-purple-500/10 border border-purple-500/20 text-purple-300 px-2 py-1 rounded">
+          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+          Hindi & English
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          Zero Hold Time
+        </span>
+      </div>
+    ),
   },
   {
     icon: FileCheck2,
-    tag: "Audits & Compliance",
-    title: "Document & Inspection Automation",
-    desc: "Purpose-built pipelines for third-party insurance inspectors, real estate developers, and bank compliance teams needing automated verification.",
-    benefit: "Cuts document processing time from days to minutes.",
-    deliverables: ["Automated OCR & Data Extraction", "Geotagged Photo Validation", "Audit-Ready Bank Reports"],
+    tag: "Audit Radar",
+    title: "Inspection & Audit Automation",
+    outcome: "Automated document OCR & field photo validation for third-party bank inspection firms.",
+    visual: (
+      <div className="flex items-center gap-2 pt-2 font-mono text-[10px]">
+        <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-1 rounded flex items-center gap-1">
+          <ShieldCheck size={12} />
+          Bank Compliant
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/80">
+          35-Min Clearance
+        </span>
+      </div>
+    ),
+  },
+  {
+    icon: Globe2,
+    tag: "Digital Authority",
+    title: "Institutional Portfolios",
+    outcome: "Cinematic, lightning-fast web presence designed to pass corporate vendor verification.",
+    visual: (
+      <div className="flex items-center gap-2 pt-2 font-mono text-[10px]">
+        <span className="bg-white/5 border border-white/10 text-white/90 px-2 py-1 rounded flex items-center gap-1">
+          <CheckCircle size={11} className="text-emerald-400" />
+          Enterprise Grade
+        </span>
+        <span className="bg-white/5 border border-white/10 px-2 py-1 rounded text-white/70">
+          Sub-second Speed
+        </span>
+      </div>
+    ),
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative px-5 sm:px-8 md:px-12 py-24 sm:py-32">
-      {/* Top Section Header */}
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-start justify-between mb-16 sm:mb-20">
+    <section id="services" className="relative px-4 sm:px-8 md:px-12 py-16 sm:py-24 max-w-7xl mx-auto">
+      {/* Header */}
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end justify-between mb-12 sm:mb-16">
         <div>
-          <Reveal delay={100}>
-            <div className="inline-block border-l-2 border-white bg-white/15 px-3 py-1.5 backdrop-blur-md mb-5 drop-shadow-md">
-              <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-white">
-                Our Services • Tech Built for Growth
+          <Reveal delay={0}>
+            <div className="inline-block border-l-2 border-white bg-white/10 px-3 py-1.5 backdrop-blur-md mb-4 drop-shadow-md">
+              <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-white">
+                Core Capabilities • High-Performance Systems
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={200}>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.08] tracking-tight text-white drop-shadow-lg max-w-2xl">
-              Purpose-built tech.
-              <br />
-              Zero unnecessary jargon.
+          <Reveal delay={60}>
+            <h2 className="text-3xl sm:text-5xl font-medium tracking-tight text-white uppercase">
+              Outcome-Driven Services.
             </h2>
           </Reveal>
         </div>
 
-        <Reveal delay={300} className="max-w-md sm:text-right">
-          <p className="text-base sm:text-lg leading-relaxed text-white/80 drop-shadow-md">
-            We don&apos;t sell tech for the sake of buzzwords. Every line of code, automated bot, and system we deploy has one job: saving your business time and expanding your margins.
+        <Reveal delay={120} className="max-w-md sm:text-right">
+          <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.15em] text-white/50">
+            High-utility automation engineered for tangible business scale.
           </p>
         </Reveal>
       </div>
 
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {/* Visual Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {SERVICES_DATA.map((service, idx) => {
           const Icon = service.icon;
           return (
-            <Reveal key={service.title} delay={120 + idx * 80}>
-              <div className="h-full flex flex-col justify-between rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md p-6 sm:p-8 hover:bg-white/15 hover:border-white/30 transition-all duration-300 shadow-xl group">
+            <Reveal key={service.title} delay={80 + idx * 50}>
+              <div className="h-full rounded-2xl border border-white/10 bg-[#0c0c12]/80 backdrop-blur-xl p-5 sm:p-6 flex flex-col justify-between shadow-xl hover:border-white/25 transition-all group">
                 <div>
-                  {/* Icon & Category */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="p-3 rounded-xl bg-white/15 border border-white/20">
-                      <Icon size={20} className="text-white" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-2.5 rounded-xl bg-white/10 border border-white/15">
+                      <Icon size={18} className="text-white" />
                     </div>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/55">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/40">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-medium text-white mb-3">
+                  <h3 className="text-lg font-medium text-white mb-2">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-white/70 leading-relaxed mb-6">
-                    {service.desc}
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
+                    {service.outcome}
                   </p>
-
-                  {/* Bullet points */}
-                  <div className="space-y-2 mb-6">
-                    {service.deliverables.map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-xs text-white/80">
-                        <span className="w-1 h-1 rounded-full bg-white/60" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Practical Benefit & CTA */}
-                <div className="pt-4 border-t border-white/10">
-                  <p className="font-mono text-[11px] text-white/90 mb-4 tracking-wide">
-                    <span className="text-emerald-400">Outcome:</span> {service.benefit}
-                  </p>
+                <div className="pt-4 border-t border-white/10 space-y-3">
+                  {service.visual}
+
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1.5 text-xs text-white font-medium hover:text-white/80 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs text-white/80 group-hover:text-white transition-colors pt-1"
                   >
-                    <span>Request this service</span>
+                    <span>Deploy this</span>
                     <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

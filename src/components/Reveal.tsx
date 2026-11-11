@@ -22,6 +22,12 @@ export function Reveal({
     const el = domRef.current;
     if (!el) return;
 
+    // Check if IntersectionObserver is available
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -31,7 +37,10 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.15 }
+      {
+        threshold: 0.05,
+        rootMargin: "0px 0px -20px 0px",
+      }
     );
 
     observer.observe(el);
@@ -47,8 +56,8 @@ export function Reveal({
       style={{
         transitionDelay: `${delay}ms`,
       }}
-      className={`transition-all duration-700 ease-out will-change-transform ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      className={`transition-all duration-500 ease-out will-change-transform ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       } ${className}`}
     >
       {children}

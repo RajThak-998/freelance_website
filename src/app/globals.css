@@ -3,6 +3,11 @@
 @theme inline {
   --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif), "Times New Roman", Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
 }
 
 ::selection {
@@ -11,16 +16,24 @@
 }
 
 html {
-  background-color: #0a0a0a;
+  background-color: #050507;
   color: #ffffff;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #050507;
   color: #ffffff;
   font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure mobile form inputs don't trigger iOS auto-zoom */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
