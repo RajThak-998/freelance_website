@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Menu, X, ArrowUpRight, MessageCircle } from "lucide-react";
+import { Menu, X, ArrowUpRight, MessageCircle, Phone } from "lucide-react";
 import { NirvyaLogo } from "./NirvyaLogo";
 
 export function Navbar() {
@@ -130,16 +130,24 @@ export function Navbar() {
             Contact Us
           </a>
 
-          <div className="pt-3 mt-1 border-t border-white/10">
+          <div className="pt-3 mt-1 border-t border-white/10 space-y-2">
             <a
-              href="https://wa.me/919876543210?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
+              href="https://wa.me/919140388536?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 py-3 text-xs uppercase tracking-[0.15em] font-medium text-white"
+              className="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 py-3 text-xs uppercase tracking-[0.15em] font-medium text-white hover:bg-emerald-500/20 transition-all"
             >
-              <MessageCircle size={15} />
-              <span>Direct WhatsApp Chat</span>
+              <MessageCircle size={15} className="text-emerald-400" />
+              <span>WhatsApp: +91 91403 88536</span>
+            </a>
+            <a
+              href="tel:+919140388536"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-2.5 text-xs uppercase tracking-[0.14em] font-medium text-white/80 hover:bg-white/10 transition-all"
+            >
+              <Phone size={14} className="text-white/70" />
+              <span>Call Hotline: +91 91403 88536</span>
             </a>
           </div>
         </div>

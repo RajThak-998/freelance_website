@@ -100,7 +100,7 @@ export function ContactSection() {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +91 98765 43210"
+                        placeholder="e.g. +91 91403 88536"
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
@@ -216,59 +216,149 @@ export function ContactSection() {
                 Skip the form entirely. Connect directly with our lead engineering team right on WhatsApp or phone.
               </p>
 
-              <div className="space-y-3.5 mb-5">
-                {/* WhatsApp button */}
+              <div className="space-y-4 mb-5">
+                {/* Instant WhatsApp Primary CTA */}
                 <a
-                  href="https://wa.me/919876543210?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
+                  href="https://wa.me/919140388536?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group"
+                  className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/[0.08] hover:bg-emerald-500/[0.14] transition-all text-white group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
+                    <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex-shrink-0">
                       <MessageCircle size={18} />
                     </div>
                     <div>
                       <div className="text-xs sm:text-sm font-medium">Chat on WhatsApp</div>
-                      <div className="text-[11px] text-white/50">Typical reply: &lt; 15 mins</div>
+                      <div className="text-[11px] text-white/60">+91 91403 88536 • Instant Reply</div>
                     </div>
                   </div>
-                  <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all" />
+                  <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all flex-shrink-0" />
                 </a>
 
-                {/* Direct Phone */}
-                <a
-                  href="tel:+919876543210"
-                  className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15">
-                      <Phone size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium">+91 98765 43210</div>
-                      <div className="text-[11px] text-white/50">Direct Engineering Hotline</div>
-                    </div>
+                {/* Direct Phone Numbers */}
+                <div className="space-y-2">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-white/50 px-1">
+                    Direct Phone Hotlines
                   </div>
-                  <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all" />
-                </a>
 
-                {/* Direct Email */}
-                <a
-                  href="mailto:contact@nirvya.agency"
-                  className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15">
-                      <Mail size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium">contact@nirvya.agency</div>
-                      <div className="text-[11px] text-white/50">Official Inquiry Desk</div>
+                  {/* Primary Hotline */}
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group">
+                    <a
+                      href="tel:+919140388536"
+                      className="flex items-center gap-3 flex-1 min-w-0"
+                    >
+                      <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15 flex-shrink-0">
+                        <Phone size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-xs sm:text-sm font-medium">+91 91403 88536</div>
+                        <div className="text-[11px] text-white/50 truncate">Primary Engineering Hotline</div>
+                      </div>
+                    </a>
+                    <div className="flex items-center gap-1.5 flex-shrink-0 ml-2">
+                      <a
+                        href="https://wa.me/919140388536?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat on WhatsApp"
+                        className="p-1.5 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                      >
+                        <MessageCircle size={15} />
+                      </a>
+                      <a
+                        href="tel:+919140388536"
+                        title="Call hotline"
+                        className="p-1.5 rounded-lg text-white/60 hover:text-white transition-colors"
+                      >
+                        <ChevronRight size={15} className="group-hover:translate-x-0.5 transition-all" />
+                      </a>
                     </div>
                   </div>
-                  <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all" />
-                </a>
+
+                  {/* Secondary Phone */}
+                  <div className="flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group">
+                    <a
+                      href="tel:+919555839886"
+                      className="flex items-center gap-3 flex-1 min-w-0"
+                    >
+                      <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15 flex-shrink-0">
+                        <Phone size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs sm:text-sm font-medium">+91 95558 39886</span>
+                        </div>
+                        <div className="text-[11px] text-white/50 truncate">Direct Engineering Support</div>
+                      </div>
+                    </a>
+                    <div className="flex items-center gap-1.5 flex-shrink-0 ml-2">
+                      <a
+                        href="https://wa.me/919555839886?text=Hi%20NIRVYA%20team,%20I'd%20like%20to%20discuss%20tech%20and%20automation%20for%20my%20business."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat on WhatsApp"
+                        className="p-1.5 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                      >
+                        <MessageCircle size={15} />
+                      </a>
+                      <a
+                        href="tel:+919555839886"
+                        title="Call support line"
+                        className="p-1.5 rounded-lg text-white/60 hover:text-white transition-colors"
+                      >
+                        <ChevronRight size={15} className="group-hover:translate-x-0.5 transition-all" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Direct Emails */}
+                <div className="space-y-2">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-white/50 px-1">
+                    Official Email Inquiries
+                  </div>
+
+                  {/* Primary Email */}
+                  <a
+                    href="mailto:bharatkumar182004@gmail.com"
+                    className="flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15 flex-shrink-0">
+                        <Mail size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-xs sm:text-sm font-medium break-all">
+                          bharatkumar182004@gmail.com
+                        </div>
+                        <div className="text-[11px] text-white/50 truncate">Primary Technical Inquiry</div>
+                      </div>
+                    </div>
+                    <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all flex-shrink-0 ml-2" />
+                  </a>
+
+                  {/* Secondary Email */}
+                  <a
+                    href="mailto:rajdsingh998@gmail.com"
+                    className="flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-all text-white group"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="p-2 rounded-lg bg-white/10 text-white border border-white/15 flex-shrink-0">
+                        <Mail size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs sm:text-sm font-medium break-all">
+                            rajdsingh998@gmail.com
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-white/50 truncate">Engineering & Client Operations</div>
+                      </div>
+                    </div>
+                    <ChevronRight size={15} className="text-white/40 group-hover:translate-x-1 group-hover:text-white transition-all flex-shrink-0 ml-2" />
+                  </a>
+                </div>
               </div>
 
               {/* Service coverage */}

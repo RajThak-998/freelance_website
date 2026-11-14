@@ -54,6 +54,57 @@ export function Footer() {
         </button>
       </div>
 
+      {/* Direct Contact Inquiries Strip */}
+      <div className="py-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-xs font-mono">
+        <div className="space-y-1">
+          <div className="text-[10px] uppercase text-white/40 tracking-[0.14em]">
+            Primary Email
+          </div>
+          <a
+            href="mailto:bharatkumar182004@gmail.com"
+            className="text-white/85 hover:text-white transition-colors block break-all font-sans text-xs"
+          >
+            bharatkumar182004@gmail.com
+          </a>
+        </div>
+
+        <div className="space-y-1">
+          <div className="text-[10px] uppercase text-white/40 tracking-[0.14em]">
+            Direct Email
+          </div>
+          <a
+            href="mailto:rajdsingh998@gmail.com"
+            className="text-white/85 hover:text-white transition-colors block break-all font-sans text-xs"
+          >
+            rajdsingh998@gmail.com
+          </a>
+        </div>
+
+        <div className="space-y-1">
+          <div className="text-[10px] uppercase text-white/40 tracking-[0.14em]">
+            Phone Hotline
+          </div>
+          <a
+            href="tel:+919140388536"
+            className="text-white/85 hover:text-white transition-colors block font-sans text-xs"
+          >
+            +91 91403 88536
+          </a>
+        </div>
+
+        <div className="space-y-1">
+          <div className="text-[10px] uppercase text-white/40 tracking-[0.14em]">
+            Phone Support Line
+          </div>
+          <a
+            href="tel:+919555839886"
+            className="text-white/85 hover:text-white transition-colors block font-sans text-xs"
+          >
+            +91 95558 39886
+          </a>
+        </div>
+      </div>
+
       <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/40">
         <div>
           © 2026 NIRVYA AGENCY. All rights reserved.
